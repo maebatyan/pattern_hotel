@@ -3,7 +3,7 @@
    =============================== */
 :root{
   --bg:#ffffff;         /* 全体の背景*/
-  --fg:#111111;         /* 文字色 */
+  --fg:#18083a;         /* 文字色 */
   --muted:#6b7280;      /* 補助テキスト */
   --acc:#686624;        /* アクセント色（ボタン：明るい水色） */
   --card:#f8fafc;       /* カード系の背景（薄いグレー） */
@@ -134,10 +134,18 @@ hr.sep{border:none;border-top:1px solid var(--line);margin:32px 0}
    ■ パターン（背景差し替え用）
    ※ 実画像のパスに置き換えてね
    =============================== */
-.bg-standard{background:url('images/pattern-standard.jpg') center/cover}
-.bg-suite   {background:url('images/pattern-suite.jpg') center/cover}
-.bg-lounge  {background:url('images/pattern-lounge.jpg') center/cover}
-.bg-bar     {background:url('images/pattern-bar.jpg') center/cover}
+.bg-standard {
+  background: url("images/pattern-standard.jpg") center/cover no-repeat;
+}
+.bg-suite {
+  background: url("images/pattern-suite.jpg") center/cover no-repeat;
+}
+.bg-lounge {
+  background: url("images/pattern-lounge.jpg") center/cover no-repeat;
+}
+.bg-bar {
+  background: url("images/pattern-bar.jpg") center/cover no-repeat;
+}
 /* バッジ（カード左上の小ラベル） */
 .badge{
   position:absolute;top:12px;left:12px;
