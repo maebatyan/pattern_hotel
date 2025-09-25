@@ -1,0 +1,259 @@
+<index.html>
+<html lang="ja">
+<link rel="stylesheet" href="./style.css">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HOTEL NAME | Patterned Design Hotel</title>
+
+<link rel="stylesheet" href="./style.css">
+<head>
+</head>
+<body>
+
+<!-- ===============================
+     ヘッダー：ナビと予約ボタン
+     =============================== -->
+<header class="header">
+  <div class="inner container">
+    <div class="logo">NITE PATTERN HOTEL <!-- ← ホテル名に置換 --></div>
+    <nav class="nav">
+      <a href="#rooms">客室</a>
+      <a href="#lounge">ラウンジ</a>
+      <a href="#bar">バー</a>
+      <a class="btn" href="#book">予約する</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ===============================
+       HERO：巨大写真
+       =============================== -->
+  <section class="section hero container" aria-label="ホテル概要">
+  <div class="slider" id="hero">
+    <div class="slide-track">
+
+      <!-- スライド1 -->
+      <figure class="slide">
+        <img src="images/ホテル外観1.jpg" alt="ホテル外観1">s
+      </figure>
+Ω
+      <!-- スライド2 -->
+      <figure class="slide">
+        <img src="images/ホテル外観2.jpg" alt="ホテル外観2">
+      </figure>
+
+      <!-- スライド3 -->
+      <figure class="slide">
+        <img src="images/ホテルロビー.jpg" alt="ホテルロビー">
+      </figure>
+
+      <!-- スライド4（任意） -->
+      <figure class="slide">
+        <img src="images/ホテル　バイキング.jpg" alt="ホテル　バイキング">
+        
+      </figure>
+
+    </div>
+
+    <button class="arrow left"  aria-label="前へ" data-dir="-1">‹</button>
+    <button class="arrow right" aria-label="次へ" data-dir="1">›</button>
+    <div class="dots" aria-hidden="true"></div>
+  </div>
+</section>
+
+  <!-- ===============================
+       ROOMS：横スライドのカード一覧
+       =============================== -->
+  <section id="rooms" class="section container" aria-labelledby="rooms-h">
+    <h2 id="rooms-h">客室</h2>
+
+    <div class="room-bar">
+      <button class="arrow left"  aria-label="前へ" data-room="-1">‹</button>
+
+      <!-- 横スクロールレール -->
+      <div class="room-rail">
+        <div class="room-track" id="roomTrack">
+          <!-- カード：クリックで下の詳細へジャンプ -->
+          <article class="room-card">
+            <a href="#standard">
+              <div class="room-thumb bg-standard"><span class="badge">Standard</span></div>
+              <div class="room-body">
+                <div class="room-title">スタンダード</div>
+                <div class="room-meta">
+                  <span class="tag">Calm</span><span class="tag">Work</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="room-card">
+            <a href="#suite">
+              <div class="room-thumb bg-suite"><span class="badge">Suite</span></div>
+              <div class="room-body">
+                <div class="room-title">スイート</div>
+                <div class="room-meta">
+                  <span class="tag">Luxury</span><span class="tag">Special</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="room-card">
+            <a href="#lounge">
+              <div class="room-thumb bg-lounge"><span class="badge">Lounge</span></div>
+              <div class="room-body">
+                <div class="room-title">共有ラウンジ</div>
+                <div class="room-meta">
+                  <span class="tag">Community</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="room-card">
+            <a href="#bar">
+              <div class="room-thumb bg-bar"><span class="badge">Bar</span></div>
+              <div class="room-body">
+                <div class="room-title">ホテルバー</div>
+                <div class="room-meta">
+                  <span class="tag">Night</span><span class="tag">Adult</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <button class="arrow right" aria-label="次へ" data-room="1">›</button>
+    </div>
+  </section>
+
+  <hr class="sep container" />
+
+  <!-- ===============================
+       DETAILS：各スペース詳細
+       =============================== -->
+  <section id="standard" class="section container">
+  <div class="detail">
+    <div class="poster">
+      <figure class="kv"><img src="images/standard-main.jpg" alt="スタンダード客室"></figure>
+      <figure><img src="images/standard-sub.jpg" </figure>
+    </div>
+    <div>
+      <h2>スタンダード – CALM GRID</h2>
+      <p>円とひし形の安定感。落ち着きと集中のための基調パターン。<br>
+         テーブル面やベッドスローに模様を配し、壁面は低彩度のカラーで抑制。</p>
+      <div class="spec">
+        <span class="tag">Wi-Fi</span><span class="tag">Desk</span><span class="tag">Shower</span>
+      </div>
+      <a id="book" class="btn" href="#">予約する</a>
+    </div>
+  </div>
+</section>
+
+<section id="suite" class="section container">
+  <div class="detail">
+    <div class="poster">
+      <figure class="kv"><img src="images/suite-main.jpg" alt="スイート客室"></figure>
+      <figure><img src="images/suite-sub.jpg" </figure>
+    </div>
+    <div>
+      <h2>スイート – LUX CROSS</h2>
+      <p>回転するスクエアが織りなすハイライト。金属小物や深色ファブリックと好相性。</p>
+      <div class="spec">
+        <span class="tag">King Bed</span><span class="tag">Bath</span><span class="tag">Mini Bar</span>
+      </div>
+      <a class="btn" href="#">予約する</a>
+    </div>
+  </div>
+</section>
+
+<section id="lounge" class="section container">
+  <div class="detail">
+    <div class="poster">
+      <figure class="kv"><img src="images/lounge-main.jpg" alt="共有ラウンジ"></figure>
+    </div>
+    <div>
+      <h2>共有ラウンジ – SOCIAL WEAVE</h2>
+      <p>交差＝出会いを象徴。壁一面は低コントラスト、ラグでパターンを効かせる。</p>
+      <div class="spec">
+        <span class="tag">Coffee</span><span class="tag">Power</span><span class="tag">Open 24h</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bar" class="section container">
+  <div class="detail">
+    <div class="poster">
+      <figure class="kv"><img src="images/bar-main.jpg" alt="ホテルバー"></figure>
+    </div>
+    <div>
+      <h2>ホテルバー – NIGHT VECTOR</h2>
+      <p>鋭いベクトルと円のコントラスト。照明で陰影を強調しミステリアスに。</p>
+      <div class="spec">
+        <span class="tag">Cocktails</span><span class="tag">DJ Fri</span><span class="tag">20:00–25:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <footer class="section container" style="text-align:center;color:var(--muted)">
+    <p>© <span id="y"></span> NITE PATTERN HOTEL ・ <a class="ghost btn" href="#">お問い合わせ</a></p>
+  </footer>
+</main>
+
+<script>
+/* =========================================
+   ▷ HERO スライダーの制御（自動・矢印・ドット）
+   ========================================= */
+(function(){
+  const root = document.getElementById('hero');               // ヒーロー領域
+  const track = root.querySelector('.slide-track');           // スライドを横に並べたレール
+  const slides = [...root.querySelectorAll('.slide')];        // 各スライド
+  const dots = root.querySelector('.dots');                   // ドットコンテナ
+  let i=0, n=slides.length, timer;                            // 現在位置・枚数・自動再生タイマー
+
+  function go(k){                                             // 指定インデックスへ移動
+    i = (k+n)%n;
+    track.style.transform = `translateX(${i*-100}%)`;
+    dots.querySelectorAll('.dot').forEach((d,idx)=>d.classList.toggle('active', idx===i));
+    reset();
+  }
+  function reset(){                                           // 自動再生（5秒）
+    clearTimeout(timer);
+    timer = setTimeout(()=>go(i+1), 5000);
+  }
+
+  // ドット生成＆クリック移動
+  dots.innerHTML = slides.map((_,idx)=>`<b class="dot ${idx? "":"active"}"></b>`).join('');
+  dots.querySelectorAll('.dot').forEach((d,idx)=>d.addEventListener('click',()=>go(idx)));
+
+  // 矢印で前後へ
+  root.querySelectorAll('.arrow').forEach(btn=>{
+    btn.addEventListener('click', ()=>go(i + Number(btn.dataset.dir)));
+  });
+
+  reset();
+})();
+
+/* =========================================
+   ▷ Rooms 横スクロールの矢印ボタン
+   ========================================= */
+(function(){
+  const track = document.getElementById('roomTrack');  // 横スクロール要素
+  const step = 260;                                    // 1回で動かす距離(px)
+  document.querySelectorAll('[data-room]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      track.scrollBy({left: step*Number(btn.dataset.room), behavior:'smooth'});
+    });
+  });
+})();
+
+/* フッターの年号を現在年に */
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
