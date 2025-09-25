@@ -1,0 +1,179 @@
+/* ===============================
+   ■ 基本色（ライトテーマに変更）
+   =============================== */
+:root{
+  --bg:#ffffff;         /* 全体の背景*/
+  --fg:#18083a;         /* 文字色 */
+  --muted:#6b7280;      /* 補助テキスト */
+  --acc:#686624;        /* アクセント色（ボタン：明るい水色） */
+  --card:#f8fafc;       /* カード系の背景（薄いグレー） */
+  --line:#e5e7eb;       /* 枠線の色（薄いグレー） */
+  --radius:14px;        /* 角丸の共通値 */
+  --pad:clamp(16px,3vw,32px); /* 横の余白 */
+  --max:1200px;         /* 最大横幅 */
+  --shadow: 0 10px 30px rgba(0,0,0,.08); /* 影は軽めに */
+}
+
+
+/* リセット・共通 */
+*{box-sizing:border-box}
+html,body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font-family:"A P-OTF 霞白藤 Min2 L",
+              "Hiragino Kaku Gothic ProN",
+              "Yu Gothic UI",
+              "Noto Sans JP",
+              system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.container{max-width:var(--max);margin:auto;padding:0 var(--pad)}
+h1,h2,h3{line-height:1.2;margin:.2em 0 .4em}
+.section{padding:clamp(28px,5vw,64px) 0;border-top:1px solid var(--line)}
+.btn{
+  display:inline-flex;gap:.5em;align-items:center;
+  background:var(--acc);color:#fff;
+  padding:.75em 1.1em;border-radius:999px;font-weight:700
+}
+.btn.ghost{background:transparent;border:1px solid var(--fg);color:var(--fg)}
+.tag{display:inline-block;border:1px solid var(--line);padding:.2em .6em;border-radius:999px;color:var(--muted);font-size:.85rem}
+
+/* ===============================
+   ■ ヘッダー
+   =============================== */
+.header{
+  position:sticky;top:0;z-index:40;
+  background:rgba(255,255,255,.7);  /* 写真の上でも読みやすい薄白 */
+  backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.header .inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:.04em}
+.nav{display:flex;gap:1rem}
+@media (max-width:720px){.nav{display:none}}
+
+/* ===============================
+   ■ ヒーロー
+   =============================== */
+/* container 幅制限を外して “画面いっぱい” にする */
+.hero.container{max-width:none;padding:0}
+
+/* スライダー本体。角丸や影は外して“フルブリード感”を出す */
+/* スライダー本体 */
+.slider{
+  position:relative;
+  overflow:hidden;
+}
+
+.slide-track{
+  display:flex;
+  transition:transform .6s cubic-bezier(.22,.61,.36,1);
+}
+
+.slide {
+  min-width:100%;
+  height:100vh;   /* 画面の高さいっぱいに */
+}
+.slide img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* キャプションは必要な時だけ。読みやすい白ベースに */
+.slide .cap{
+  position:absolute;
+  inset:auto var(--pad) var(--pad) var(--pad);
+  background:rgba(255,255,255,.8);  /* 明るい半透明の白 */
+  color:var(--fg);
+  backdrop-filter:blur(4px);
+  padding:14px 16px;border-radius:12px
+}
+
+/* ドット＆矢印（薄めのグレーで軽く） */
+.hero .dots{position:absolute;inset:auto 0 16px 0;display:flex;gap:8px;justify-content:center}
+.dot{width:8px;height:8px;border-radius:50%;background:#cbd5e1}
+.dot.active{background:#334155}
+.arrow{
+  position:absolute;top:50%;translate:0 -50%;
+  background:rgba(255,255,255,.85);border:1px solid var(--line);
+  width:42px;height:42px;border-radius:50%;
+  display:grid;place-items:center;cursor:pointer;color:#111
+}
+.arrow.left{left:10px} .arrow.right{right:10px}
+
+/* ===============================
+   ■ Room 横スライド（明るめカード）
+   =============================== */
+.room-bar{display:flex;align-items:center;gap:10px;margin-top:18px}
+.room-rail{overflow:hidden;flex:1}
+.room-track{display:flex;gap:14px;scroll-snap-type:x mandatory;overflow-x:auto;padding-bottom:6px}
+.room-card{
+  scroll-snap-align:center;min-width:220px;background:var(--card);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)
+}
+.room-thumb{aspect-ratio:4/3;background:#e2e8f0} /* 画像ない時の仮色：薄水色 */
+.room-body{padding:12px}
+.room-title{font-weight:700}
+.room-meta{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+
+/* ===============================
+   ■ 詳細セクション
+   =============================== */
+.detail{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start}
+.detail .poster{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#fff}
+.kv{aspect-ratio:16/10;background:#e5e7eb}
+.spec{display:flex;flex-wrap:wrap;gap:8px;margin:.5rem 0 1rem}
+@media (max-width:900px){.detail{grid-template-columns:1fr}}
+hr.sep{border:none;border-top:1px solid var(--line);margin:32px 0}
+
+/* ===============================
+   ■ パターン（背景差し替え用）
+   ※ 実画像のパスに置き換えてね
+   =============================== */
+.bg-standard {
+  background: url("images/pattern-standard.jpg") center/cover no-repeat;
+}
+.bg-suite {
+  background: url("images/pattern-suite.jpg") center/cover no-repeat;
+}
+.bg-lounge {
+  background: url("images/pattern-lounge.jpg") center/cover no-repeat;
+}
+.bg-bar {
+  background: url("images/pattern-bar.jpg") center/cover no-repeat;
+}
+/* バッジ（カード左上の小ラベル） */
+.badge{
+  position:absolute;top:12px;left:12px;
+  background:rgba(255,255,255,.9);color:#111;
+  padding:.3em .6em;border-radius:999px;font-size:.85rem;border:1px solid var(--line)
+}
+/* 部屋紹介レイアウト（左右交互） */
+.detail {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.detail .poster {
+  flex: 1.1; /* 写真側の幅 */
+}
+
+.detail > div:last-child {
+  flex: 0.9; /* テキスト側の幅 */
+}
+
+/* 偶数番目の section.detail を反転 */
+.section.container:nth-of-type(even) .detail {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 900px) {
+  .detail {
+    flex-direction: column; /* スマホでは縦並びに戻す */
+  }
+}
